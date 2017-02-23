@@ -1,0 +1,23 @@
+{
+  "name": "AngularJs",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "nayan <nayan.drakshapally@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/nayandrakshapally/AngularJs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "bootstrap": "^3.3.7",
+    "underscore": "^1.8.3",
+    "font-awesome": "^4.7.0"
+  }
+}

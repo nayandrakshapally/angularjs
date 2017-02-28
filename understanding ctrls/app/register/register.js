@@ -1,11 +1,11 @@
-(function(){
+(
+    function () {
+        angular.module("register", []);
 
-    //module creation.
-    angular.module("register",[]);
-
-    //consuming the module
-    angular.module("register")
-    .config([function(){
-        console.log("Config : register");
-    }]);
-})();
+        //consuming register module.
+        angular.module("register")
+        .config([function(){
+            console.log("Config : Register");
+        }]);
+    }
+)();

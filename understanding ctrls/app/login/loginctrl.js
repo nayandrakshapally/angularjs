@@ -1,11 +1,8 @@
 (function(){
+    function loginCtrl(){
+        
+    }
 
-angular.module("login")
-.controller("loginctrl",[loginctrl]);
-
-
-
-
-
-
+    angular.module("login")
+    .controller("loginCtrl",[loginCtrl])
 })();

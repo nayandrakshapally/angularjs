@@ -2,13 +2,28 @@
 
   //module creation.
   angular.module("bitblogger",
-    ["register", "login", "header","comments"]);
+    ["register", "login", "header","comments","posts","ui.router"]);
 
   //consuming the module
   angular.module("bitblogger")
-    .config([function () {
+    .config(["$stateProvider",function ($stateProvider) {
       console.log("Config : Bitblogger");
+
+          var registerObj={
+              templateUrl : "app/register/register.tpl.html"
+          };
+
+
+          var postsObj={
+              templateUrl : "app/posts/posts.tpl.html"
+          };
+
+          $stateProvider.state("register",registerObj);
+          $stateProvider.state("posts",postsObj);
+
     }]);
+
+
 
   angular.module("bitblogger")
     .controller("mainCtrl", [mainCtrlFn]);

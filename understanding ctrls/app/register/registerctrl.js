@@ -1,28 +1,34 @@
 (function () {
 
-    function registerCtrl(registerSvc) {
+    function registerCtrl(registerSvc,$state) {
         var vm = this;
-        
-        registerSvc.getCountriesFromJson()
+        vm.user={};
+        vm.nextPage= function() {
+            $state.go("posts");
+        };
+            registerSvc.getCountriesFromJson()
 
-        
-            .then(function (response) {
-                console.log(response);
-                vm.countries = response.data.countries;
-               
-            })
-        
-            .catch(function (response) {
-                console.log(response);
-            })
-            
-            .finally(function (response) {
-                console.log(response);
-            });
 
-            }
+                .then(function (response) {
+                    console.log(response);
+                    vm.countries = response.data.countries;
+
+                })
+
+                .catch(function (response) {
+                    console.log(response);
+                })
+
+                .finally(function (response) {
+                    console.log(response);
+                });
+
+        }
+
+
+
 
     angular.module("register")
-        .controller("registerCtrl", ["registerSvc", registerCtrl]);
+        .controller("registerCtrl", ["registerSvc","$state", registerCtrl]);
 
 })();

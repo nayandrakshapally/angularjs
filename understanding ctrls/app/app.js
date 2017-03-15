@@ -7,15 +7,17 @@
   //consuming the module
   angular.module("bitblogger")
     .config(["$stateProvider",function ($stateProvider) {
-      console.log("Config : Bitblogger");
 
-          var registerObj={
-              templateUrl : "app/register/register.tpl.html"
+         var registerObj={
+              templateUrl : "app/register/register.tpl.html",
+              controller : "registerCtrl  as rc"
+
           };
 
-
           var postsObj={
-              templateUrl : "app/posts/posts.tpl.html"
+              templateUrl : "app/posts/posts.tpl.html",
+              controller : "postsCtrl as pc",
+              params:{userInfo:null}
           };
 
           $stateProvider.state("register",registerObj);
@@ -29,17 +31,11 @@
     .controller("mainCtrl", [mainCtrlFn]);
 
   function mainCtrlFn() {
-    var vm = this;
-    vm.headerTemplate = "app/header/header.tpl.html";
-    vm.commentsTemplate ="app/comments/comments.tpl.html";
-    vm.registerTemplate = "app/register/register.tpl.html";
-    vm.appName = "BitBlogger";
-    vm.show = false;
-    vm.firstName="Test";
-   
-    vm.tryMe= function(){
-      console.log(vm.firstName);
-    };
+      var vm = this;
+      vm.headerTemplate = "app/header/header.tpl.html";
+      vm.commentsTemplate = "app/comments/comments.tpl.html";
+      vm.registerTemplate = "app/register/register.tpl.html";
+      vm.appName = "BitBlogger";
   }
 
 })();

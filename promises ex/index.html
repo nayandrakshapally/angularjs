@@ -1,0 +1,39 @@
+<html ng-app="products">
+    <head>
+        <title>list of products</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    
+    <body ng-controller="productCtrl as pc">
+        
+        <h1>List of products</h1>
+        
+       <!-- this is used for filters.ng-model name should be same as name given in filter-->
+        <input type="text" placeholder="searchByPrice" ng-model="searchByPrice">
+         <input type="text" placeholder="searchByModel" ng-model="searchByModel">
+        <input type="button" ng-click="sort()" value="sorting">
+        
+        <table class="table table-striped">
+            <thead>
+                <td>INDEX</td>
+                <td>PRICE</td>
+                <td>MODEL</td>
+            </thead>
+            
+            <tbody>
+                <tr ng-repeat="item in pc.products|filter:{Model:searchByModel}|filter:{Price:Price}">
+                    <td>{{item.index}}</td>
+                    <td>{{item.Price}}</td>
+                    <td>{{item.Model}}</td>
+                </tr>
+            </tbody>
+            
+             
+        </table>
+        <script src="products.js"></script>
+    </body>
+    
+</html>

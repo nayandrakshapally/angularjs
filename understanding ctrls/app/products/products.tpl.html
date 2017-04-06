@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-xs-3">
+        <input type="text" class="form-control" placeholder="Search By Model" ng-model="searchByModel">
+    </div>
+    <div class="col-xs-3">
+        <input type="text" class="form-control" placeholder="Search By Price" ng-model="searchByPrice">
+    </div>
+</div>
+
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>s-no</th>
+        <th>MODEL</th>
+        <th>PRICE</th>
+        <th><a href="" ng-click="showMore()">Show More</a></th>
+        <th><a href=""  ng-click="sortByPrice()">SORT</a></th>
+        <!--<th><a href=""  ng-click="sortByPrice2()">SORT2</a></th>-->
+    </tr>
+    </thead>
+    <tr ng-repeat="item in prc.products|orderBy:priceCriteria|filter:{Model:searchByModel}|filter:{Price:searchByPrice}">
+    <!--<tr ng-repeat="item in products">-->
+        <td>{{item.index}}</td>
+        <td>{{item.Model}}</td>
+        <td>{{item.Price}}</td>
+        <td> <button ng-click ="addData(item)">
+            click me
+        </button></td>
+    </tr>
+</table>

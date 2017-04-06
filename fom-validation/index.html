@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <title>My AngularJS App</title>
+   
+      <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-zF4BRsG/fLiTGfR9QL82DrilZxrwgY/+du4p/c7J72zZj+FLYq4zY00RylP9ZjiT" crossorigin="anonymous">
+<!--      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-validation/1.4.3/angular-validation.min.js"></script>-->
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+      
+      <script data-require="angular-messages.js@*" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.15/angular-messages.js"></script>
+  </head>
+  <body>
+      <div class="container" > 
+          <div class="col-md-5">
+          <form class="form-horizontal" name="userForm" novalidate>
+  <fieldset>
+    <legend>Legend</legend>
+    <div class="form-group" ng-class="{ 'has-error' : userForm.EmployeeId.$invalid && userForm.EmployeeId.$touched }">
+                <label class="control-label col-xs-2" >EmployeeId</label>
+                <div class="col-xs-5">
+                    <input type="text"
+                           name="EmployeeId"
+                           class="form-control"
+                           ng-model="order.EmployeeId"
+                           placeholder="EmployeeId" required/>
+                </div>
+                     <span class="help-block has-error"
+                           ng-if="userForm.EmployeeId.$touched"
+                           ng-messages="userForm.EmployeeId.$error">
+                             <span ng-message="required">
+                                  EmployeeId is required
+                              </span>
+                     </span>
+            </div>
+   
+    
+    
+    
+   
+  </fieldset>
+</form>
+          </div>
+      </div>
+      
+      <script src="app.js"></script>
+  </body>
+</html>

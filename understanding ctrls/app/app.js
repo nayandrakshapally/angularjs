@@ -2,11 +2,15 @@
 
   //module creation.
   angular.module("bitblogger",
-    ["register", "login", "header","comments","posts","ui.router"]);
+    ["register", "login", "header","comments","posts","products","common","ui.router"]);
 
   //consuming the module
   angular.module("bitblogger")
-    .config(["$stateProvider",function ($stateProvider) {
+
+    .config(["$stateProvider","versionProvider",function ($stateProvider,versionProvider) {
+
+   //providers
+        console.log(versionProvider.$get());
 
          var registerObj={
               templateUrl : "app/register/register.tpl.html",
@@ -20,9 +24,17 @@
               params:{userInfo:null}
           };
 
-          $stateProvider.state("register",registerObj);
-          $stateProvider.state("posts",postsObj);
+          var productsObj={
+              templateUrl : "app/products/products.tpl.html",
+              controller : "productsCtrl  as prc"
 
+          };
+
+          $stateProvider.state("register",registerObj);
+
+
+          $stateProvider.state("posts",postsObj);
+          $stateProvider.state("products",productsObj);
     }]);
 
 
@@ -37,5 +49,19 @@
       vm.registerTemplate = "app/register/register.tpl.html";
       vm.appName = "BitBlogger";
   }
+
+})();
+//providers//
+(function(){
+    angular.module("bitblogger")
+        .provider("version",[versionProvider]);
+
+    function versionProvider() {
+        var buildNumber = "1.0";
+        this.$get = function () {
+            return buildNumber;
+
+        }
+    }
 
 })();

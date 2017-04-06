@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="products">
+  <head>
+    <title>AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  </head>
+  <body ng-controller="productsCtrl">
+       <div class="form-group">
+            <label class="control-label col-sm-2">Products:</label>
+            <div class="col-sm-4">
+            <select class="form-control" 
+                    
+                ng-model="rc.user.selectedProducts"
+                ng-options="item.Model for item in products"></select>
+        </div>
+  </div>
+      <script src="products.js"></script>
+  </body>
+</html>

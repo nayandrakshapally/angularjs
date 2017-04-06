@@ -1,10 +1,14 @@
 (function () {
-    function headerCtrl($state) {
+    function headerCtrl($state,$scope) {
 
         
-        var vm = this;
+        var vm=this;
+        vm.cart=0;
+        vm.brandName="BitBloggerApp";
 
-        //TODO: Move navItems to service in future.
+        $scope.$on("add-data",function(item){
+            vm.cart++;
+        });
         vm.navItems = [
             { "key": "home", "value": "Home" },
             { "key": "products", "value": "Products" },
@@ -15,11 +19,11 @@
         ];
 
         vm.changeState=function(data){
-            console.log(data);
             $state.go(data);
+            console.log(data);
         }
     }
 
     angular.module("header")
-        .controller("headerCtrl", ["$state",headerCtrl])
+        .controller("headerCtrl", ["$state","$scope",headerCtrl])
 })();

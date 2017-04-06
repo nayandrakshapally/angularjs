@@ -5,7 +5,7 @@
             .then(function (response) {
                 vm.posts = response.data.posts;
             })
-            .catch(function (response) {
+            .catch(function (error) {
 
             });
 

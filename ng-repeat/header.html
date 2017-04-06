@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" ng-controller="headerCtrl as hc">
+<nav class="navbar navbar-default" ng-controller="mainCtrl as mc">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -7,19 +7,23 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <custom-brand></custom-brand>
-      <!--<a class="navbar-brand" href="#">Brand</a>-->
+      <a class="navbar-brand" href="#">Brand</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="item in hc.navItems" ng-click="hc.changeState(item.key)">
-          <!--<a ui-sref="{{item.key}}">{{item.value}}</a>-->
-            <a href="#">{{item.value}}</a>
-          </li>
+      <ul class="nav navbar-nav" ng-repeat="items in mc.navItems">
+        
+        <li><a href="#">{{items.value}}</a></li>
+        
       </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a>cart&nbsp;{{hc.cart}}</a></li>
+        <li><a href="#">Link</a></li>
       </ul>
     </div>
   </div>

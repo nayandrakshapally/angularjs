@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <title>My AngularJS App</title>
+      <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-h21C2fcDk/eFsW9sC9h0dhokq5pDinLNklTKoxIZRUn3+hvmgQSffLLQ4G4l2eEr" crossorigin="anonymous">
+      
+      
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    
+      
+  </head>
+  <body ng-controller="mainCtrl as mc">
+      <select ng-model="s" ng-options="countries.name for countries in mc.countries"></select>
+       <select ng-model="s" ng-options="countries.code for countries in mc.countries"></select>
+      
+      <script src="app.js"></script>
+  </body>
+</html>

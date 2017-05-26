@@ -1,0 +1,23 @@
+.logo ul {
+    list-style: none;
+    padding-right: 40px;
+}
+
+.logo ul li a{
+    margin-bottom: -7px;
+    
+}
+.logo ul li a :hover {
+    color: red;
+    border-bottom: 2px solid blue;
+}
+
+.logo img {
+    width: 100px;
+    height: 3x0px;
+}
+
+.logo p{
+    font-size: 10px;
+    color: deepskyblue;
+}

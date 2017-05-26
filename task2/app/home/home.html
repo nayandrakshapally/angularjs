@@ -1,0 +1,109 @@
+<div ng-controller="homectrl as hc">
+    <form>
+        <div class="radio">
+          <label><input type="radio" name="optradio">One Way</label>
+        </div>
+        <div class="radio" >
+          <label><input type="radio" name="optradio">Round Trip</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Multi City</label>
+        </div>
+      </form>
+
+<div class="col-sm-3">
+  <label>Select Passengers</label>
+              
+  <table class="table table-striped">
+    
+    <tbody>
+      <tr>
+        <th>Adults [{{hc.i}}]</th>
+        <th>Children [{{hc.j}}]</th>
+        <th>pets [{{hc.k}}]</th>
+      </tr>
+        
+        <tr>
+        <th>
+            <button ng-click="addDataAdult()">+</button>
+            <button ng-click="deleteDataAdult()">-</button>
+        </th>
+        <th>
+            <button ng-click="addDataChildren()">+</button>
+            <button ng-click="deleteDataChildren()">-</button>    
+        </th>
+        <th>
+            <button ng-click="addDataPets()">+</button>
+            <button ng-click="deleteDataPets()">-</button>   
+        </th>
+      </tr>
+      
+    </tbody>
+  </table>
+    </div>
+    
+    
+        <div class="form-group">
+                
+                <div class="col-sm-3">
+                    <label for="sel1">From:</label>
+                    <select  class="form-control"
+                            ng-model="hc.user.selectedCountry"
+                            ng-options="country.name for country in hc.countries"></select>
+                </div>
+        </div>
+    
+        <div class="form-group">
+                    
+                    <div class="col-sm-3">
+                        <label for="sel1">To:</label>
+                        <select class="form-control"
+                                ng-model="hc.user.selectedDestination"
+                                ng-options="destination.name for destination in hc.destination"></select>
+                    </div>
+        </div>
+    
+    <div class="form-group">
+                    
+                    <div class="col-sm-3">
+                        <label for="sel1">Check Availability</label><br>
+                        <button class="btn btn-primary"  ng-click="fadeAnimation = !fadeAnimation">Search</button>
+                        
+                    </div>
+        </div>
+    <div class="tbl">
+     <table ng-if="fadeAnimation" class="animationIf">
+         <caption style="border:2px solid blue; text-align:center">Travelling Details</caption>
+    <tr>
+        <th style="border:2px solid blue; padding:20px;">Adults</th>
+        <th style="border:2px solid blue;  padding:20px;">Children</th>
+        <th style="border:2px solid blue;  padding:20px;">Pets</th>
+        <th style="border:2px solid blue;  padding:20px;">From</th>
+        <th style="border:2px solid blue;  padding:20px;">To</th>
+        <th style="border:2px solid blue;  padding:20px;">Trip Name</th>
+       </tr>
+       <tr>
+        <td style="border:2px solid blue;  padding:20px;">{{hc.i}}</td>
+        <td style="border:2px solid blue;  padding:20px;">{{hc.j}}</td>
+        <td style="border:2px solid blue;  padding:20px;">{{hc.k}}</td>
+        <td style="border:2px solid blue;  padding:20px;">{{hc.user.selectedCountry.name}}</td>
+        <td style="border:2px solid blue;  padding:20px;">{{hc.user.selectedDestination.name}}</td>
+           <td style="border:2px solid blue;  padding:20px;">{{}}</td>
+           
+    </tr>
+         <tr>
+            <th><h3>Available Dates</h3></th>
+         </tr>
+    <tr ng-repeat="date in hc.dates">
+                <td style="border:2px solid blue;  padding:20px;">{{date.date}}</td>
+                <td style="border:2px solid blue;  padding:20px;">{{date.cost}}</td>
+                <td style="border:2px solid blue;  padding:20px;">{{date.availability}}</td>
+        <td style="border:2px solid blue;  padding:20px;"><a href="https://www.makemytrip.com/">Book</a></td>
+            </tr>
+    </table>
+</div>
+    
+   
+</div>
+
+

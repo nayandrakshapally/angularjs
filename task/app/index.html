@@ -1,0 +1,39 @@
+<html ng-app="task">
+    <head>
+        <title>Dailybreak</title>
+    </head>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-gv0oNvwnqzF6ULI9TVsSmnULNb3zasNysvWwfT/s4l8k5I+g6oFz9dye0wg3rQ2Q" crossorigin="anonymous">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+    
+    <body ng-controller="mainCtrl as mc">
+        <div class="container">
+    <div ng-include="mc.headerTemplate"></div>
+        <div ui-view></div>
+    
+        
+        <script src="app.js"></script>
+        <script src="header/header.js"></script>
+        <script src="header/headerCtrl.js"></script>
+        
+        <script src="news/news.js"></script>
+        <script src="entertainment/entertainment.js"></script>
+            
+        <script src="login/login.js"></script>
+        <script src="signup/signup.js"></script>
+            
+    
+       </div> 
+    </body>
+</html>

@@ -1,24 +1,11 @@
-<!doctype html>
-<html ng-app="app">
-  <head>
-    <title>My AngularJS App</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-  </head>
-  <body>
-<!--
-      <div ng-controller="headerCtrl">
-        cart:{{cart}}
-      </div><br>
-      <div ng-controller="contentCtrl">
-        <input type="button" value="Add" ng-click="add(item)">
-      </div>
-      <script src="app.js"></script>
-      <script src="headerCtrl.js"></script>
-      <script src="contentCtrl.js"></script>
--->
-      
-      
-      <div ng-controller="headerCtrl">
+<html ng-app="broadcast">
+<head>
+    <title>{{broadcast}}</title>
+        <script src="bower_components/angular/angular.js"></script>
+</head>
+<body>
+
+     <div ng-controller="headerCtrl">
         cart:{{cart}}
       </div>
       
@@ -26,8 +13,7 @@
         <input type="button" value="Select" ng-click="select(data)">
       </div>
       
-      <script src="app.js"></script>
-      <script src="headerCtrl.js"></script>
-      <script src="contentCtrl.js"></script>
-  </body>
-</html>
+    <script src="app/app.js"></script>
+      <script src="app/headerCtrl.js"></script>
+        <script src="app/contentCtrl.js"></script>
+</body>

@@ -1,0 +1,35 @@
+<div ng-controller="ContactController">
+    <form class="well">
+        <label>Name</label>
+        <input type="text" name="name" ng-model="newcontact.name"/>
+        <label>Email</label>
+        <input type="text" name="email" ng-model="newcontact.email"/>
+        <label>Phone</label>
+        <input type="text" name="phone" ng-model="newcontact.phone"/>
+        <br>
+        <input type="hidden" ng-model="newcontact.id" />
+        <input type="button" value="Save" ng-click="saveContact()" class="btn btn-primary"/>
+        <input type="button" value="Reset" ng-click="reset()" class="btn btn-primary"/>
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th style="border:2px solid blue; padding:20px;">Name</th>
+            <th style="border:2px solid blue; padding:20px;">Email</th>
+            <th style="border:2px solid blue; padding:20px;">Phone</th>
+            <th style="border:2px solid blue; padding:20px;">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="contact in contacts">
+            <td style="border:2px solid blue; padding:20px;">{{ contact.name }}</td>
+            <td style="border:2px solid blue; padding:20px;">{{ contact.email }}</td>
+            <td style="border:2px solid blue; padding:20px;">{{ contact.phone }}</td>
+            <td style="border:2px solid blue; padding:20px;">
+                <a  href="#" ng-click="edit(contact.id)">edit</a> |
+                <a href="#" ng-click="delete(contact.id)">delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

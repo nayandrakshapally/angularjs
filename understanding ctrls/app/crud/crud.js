@@ -1,6 +1,7 @@
+(function(){
+angular.module("crud",[]);
 
-var app = angular.module('myApp',[])
-
+angular.module("crud")
 .controller('ContactController',function ContactController($scope) {
 
 
@@ -15,9 +16,7 @@ var app = angular.module('myApp',[])
     }
 
      $scope.reset = function() {
-
-     //  $scope.contacts.push($scope.newcontact);
-        $scope.newcontact = {};
+     $scope.newcontact = {};
     }
 
     
@@ -42,3 +41,4 @@ var app = angular.module('myApp',[])
         }
     }
 })
+})();
